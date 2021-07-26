@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Check all</title>
+  <style>
+    .container{
+      display: grid;
+      grid-template-columns: 25px 100px;
+      grid-template-rows: 25px 25px 25px 25px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <input type="checkbox" id="checkbox">Check All
+    <input type="checkbox" class="checkboxes">A
+    <input type="checkbox" class="checkboxes">B
+    <input type="checkbox" class="checkboxes">C
+  </div>
+  <script>
+    const checkbox = document.getElementById('checkbox');
+    const checkboxes = document.getElementsByClassName('checkboxes');
+
+    checkbox.addEventListener('click', () => {
+      Array.prototype.forEach.call(checkboxes, box => box.checked = checkbox.checked);
+    });
+
+  </script>
+</body>
+</html>
